@@ -65,7 +65,7 @@ nav {
 .nav__links li a {
   text-decoration: none;
   color: #fff;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
   padding: 8px 12px;
   border-radius: var(--radius);
@@ -73,7 +73,7 @@ nav {
 }
 
 .nav__logo {
-  width: 250px;
+  width: 300px;
   height: auto;
 }
 
@@ -100,14 +100,14 @@ nav {
 }
 
 .hero__title {
-  font-size: 60px;
+  font-size: 70px;
   line-height: 1.2;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
 .hero__subtitle {
-  font-size: 24px;
+  font-size: 25px;
   line-height: 1.5;
   margin-bottom: 30px;
 }
@@ -155,21 +155,22 @@ Features Section
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .feature h1{
-  font-size: 60px;
-  font-weight: 350;
-  margin-bottom: 10px;
+  font-size: 50px;
+  font-weight: 400;
+  margin-bottom: 5px;
   color: black;
 }
 
 .feature p{
-  font-size: 30px;
+  font-size: 25px;
   line-height: 1.5;
+  font-weight: 400;
   margin-bottom: 30px;
-  color: rgb(38, 38, 38);
+  color: rgb(93, 93, 93);
   text-align: center;
 }
 
@@ -180,8 +181,8 @@ Features Section
   align-items: stretch;
   gap: 20px;
   flex-wrap: wrap;
-  max-width: 1200px;
-  width: 100%;
+  max-width: 1000px;
+  width: 75%;
 }
 
 .feature__card {
@@ -198,14 +199,15 @@ Features Section
 }
 
 .feature__card h2{
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
-  margin: 15px 0;
+  margin: 10px 0;
 }
 
 .feature__card p{
-  color: rgb(18, 18, 18);
-  font-size: 20px;
+  color: rgb(67, 67, 67);
+  font-size: 18px;
+  font-weight: 450;
   line-height: 1.5;
 }
 
@@ -231,8 +233,8 @@ Features Section
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 96px;
-  height: 96px;
+  width: 150px;
+  height: 150px;
   padding: 0;
   border: none;
   background: transparent;
@@ -289,7 +291,7 @@ Features Section
 }
 
 .macbook__title {
-  font-size: 64px;
+  font-size: 50px;
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 20px;
@@ -297,15 +299,15 @@ Features Section
 }
 
 .macbook__subtitle {
-  font-size: 30px;
+  font-size: 25px;
   line-height: 1.6;
   color: #555;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .macbook__cta button {
-  padding: 18px 60px;
-  background-color: rgb(37, 156, 230);
+  padding: 16px 50px;
+  background-color: #2196f3;
   color: #fff;
   font-size: 24px;
   font-weight: 600;
@@ -341,7 +343,7 @@ Newsletter Section
   flex-direction: row;
   align-items: center;
   gap: 100px;               
-  max-width: 1440px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 60px 5%;
 }
@@ -365,16 +367,25 @@ Newsletter Section
 
 .newsletter__content h1 {
   font-size: 48px;
-  font-weight: 500;
-  margin-bottom: 20px;
+  font-weight: 400;
+  margin-bottom: 40px;
   line-height: 1.2;
 }
 
-.newsletter__content p {
+.newsletter__content p{
   font-size: 18px;
-  color: #555;
-  margin-bottom: 10px;
+  font-weight:600;
+  color: #616161;
+  margin-bottom: 40px;
 }
+
+.newsletter__content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(53, 53, 53);
+  line-height: 1.0;
+}
+
 
 .newsletter__form {
   margin-top: 20px;
@@ -385,17 +396,18 @@ Newsletter Section
 .newsletter__input {
   flex: 1;
   padding: 14px 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #c9c9c9;
   border-radius: 25px;
   font-size: 16px;
+  background-color: #e4e4e4ca;
 }
 
 .btn.btn--secondary {
-  padding: 14px 30px;
+  padding: 14px 28px;
   background-color: var(--accent-dark);
   color: #fff;
-  font-size: 24px;
-  font-weight: 300;
+  font-size: 22px;
+  font-weight: 500;
   border: none;
   border-radius: 25px;
   cursor: pointer;
@@ -413,26 +425,26 @@ Partners Section
 .partners {
   max-width: auto;
   margin: 80px auto;
-  padding: 0 5%;
+  padding: 0 2%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 5px;
 }
 
 .partners h1{
-  font-size: 60px;
-  font-weight: 400;
+  font-size: 50px;
+  font-weight: 500;
   margin-bottom: 10px;
-  padding: 80px 5%;
+  padding: 5px 2%;
   color: rgb(0, 0, 0);
 }
 
 .partners p{
-  font-size: 30px;
+  font-size: 25px;
   line-height: 1.5;
-  margin-bottom: 30px;
+  margin-bottom: 80px;
   color: rgb(38, 38, 38);
   text-align: center;
 }
@@ -473,7 +485,7 @@ Testimonial Section
 
 /* Testimonial Section */
 .testimonial {
-  max-width: 1440px;
+  max-width: 1200px;
   margin: 80px auto;
   text-align: center;
   padding: 40px 20px;
@@ -487,7 +499,7 @@ Testimonial Section
 .testimonial h1 {
   font-size: 50px;
   font-weight: 500;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   color: #222;
 }
 
