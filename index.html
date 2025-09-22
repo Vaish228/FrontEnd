@@ -111,22 +111,22 @@
         </div>
       </div>
 
-          <div class="feature__video" tabindex="0" aria-label="Product video">
-      <video
-        class="feature__player"
-        preload="metadata"
-        poster="assets/images/screen.png"
-        playsinline
-      >
-        <source src="assets/videos/demo.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <div class="feature__video" tabindex="0" aria-label="Product video">
+        <video
+          class="feature__player"
+          preload="metadata"
+          poster="assets/images/screen.png"
+          playsinline
+        >
+          <source src="assets/demo_video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
-      <!-- use a button for accessibility; the inner img is purely decorative -->
-      <button class="feature__play-btn" aria-label="Play video" type="button">
-        <img src="assets/icons/play-button.svg" alt="" />
-      </button>
-    </div>
+        <!-- Play/Pause button -->
+        <button class="feature__play-btn" aria-label="Play video" type="button">
+          <img src="assets/icons/play-button.svg" alt="" />
+        </button>
+      </div>
     </div>
 
     <section class="macbook">
@@ -263,28 +263,110 @@ Testimonial Section
 -------------------------------------------------------------------------------------------------------------------  -->
     <section class="testimonial">
       <h1>Testimonials</h1>
-      <img src="assets/icons/ibm.svg" alt="IBM" />
-      <p>
-        Most calendars are designed for teams. Slate is designed for freelancers
-        <br />
-        who want a simple way to plan their schedule.
-      </p>
 
-      <div class="testimonial-profile">
-        <img src="assets/images/test-profile.png" alt="" />
-        <div class="test-content">
-          <h3>Sarah Steiner</h3>
-          <p>designation</p>
+      <!-- Carousel container -->
+      <div class="testimonial-carousel">
+        <!-- Slide 1 -->
+        <div class="testimonial-slide active">
+          <img src="assets/icons/ibm.svg" alt="IBM" />
+          <p>
+            Most calendars are designed for teams. Slate is designed for
+            freelancers
+            <br />
+            who want a simple way to plan their schedule.
+          </p>
+          <div class="testimonial-profile">
+            <img src="assets/images/test-profile.png" alt="" />
+            <div class="test-content">
+              <h3>Sarah Steiner</h3>
+              <p>designation</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="testimonial-slide">
+          <img src="assets/icons/ibm.svg" alt="IBM" />
+          <p>
+            Slate helps freelancers stay organized and save time <br />
+            with a minimal and beautiful interface.
+          </p>
+          <div class="testimonial-profile">
+            <img src="assets/images/test-profile.png" alt="" />
+            <div class="test-content">
+              <h3>Michael Brown</h3>
+              <p>UI Designer</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="testimonial-slide">
+          <img src="assets/icons/ibm.svg" alt="IBM" />
+          <p>
+            Organizing my schedule has never been easier. <br />
+            Slate is intuitive and powerful at the same time.
+          </p>
+          <div class="testimonial-profile">
+            <img src="assets/images/test-profile.png" alt="" />
+            <div class="test-content">
+              <h3>Emily Davis</h3>
+              <p>Developer</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Pagination dots -->
-      <div class="testimonial-dots">
-        <span class="dot"></span>
-        <span class="dot active"></span>
-        <span class="dot"></span>
+      <!-- Blue navigation buttons -->
+      <div class="testimonial-nav">
+        <button class="nav-btn active"></button>
+        <button class="nav-btn"></button>
+        <button class="nav-btn"></button>
       </div>
     </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll(".testimonial-slide");
+        const navBtns = document.querySelectorAll(".nav-btn");
+
+        let currentIndex = 1; // ✅ start from slide 2
+
+        function showSlide(index) {
+          slides.forEach((slide, i) => {
+            slide.classList.remove("active");
+            navBtns[i].classList.remove("active");
+          });
+          slides[index].classList.add("active");
+          navBtns[index].classList.add("active");
+          currentIndex = index;
+        }
+
+        // ✅ Initialize with 2nd slide
+        showSlide(currentIndex);
+
+        // ✅ Manual navigation
+        navBtns.forEach((btn, i) => {
+          btn.addEventListener("click", () => {
+            showSlide(i);
+            resetAutoSlide(); // restart timer on manual click
+          });
+        });
+
+        // ✅ Auto slide
+        let autoSlide = setInterval(nextSlide, 4000);
+
+        function nextSlide() {
+          let nextIndex = (currentIndex + 1) % slides.length;
+          showSlide(nextIndex);
+        }
+
+        // ✅ Reset auto-slide when user interacts
+        function resetAutoSlide() {
+          clearInterval(autoSlide);
+          autoSlide = setInterval(nextSlide, 4000);
+        }
+      });
+    </script>
 
     <!-- -------------------------------------------------------------------------------------------------------------------
 Pricing Section
@@ -398,11 +480,11 @@ Contact Section
           </form>
         </div>
         <div id="contactModal" class="modal" aria-hidden="true">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>Your query sent successfully!</p>
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Your query sent successfully!</p>
+          </div>
         </div>
-      </div>
 
         <!-- Right: Info -->
         <div class="contact-info">
@@ -428,8 +510,8 @@ Contact Section
 
           <div class="map">
             <iframe
-              src="assets/images/map.png"
-              width="75%"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086134574573!2d-122.41941508468105!3d37.77492927975996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808f74b5d5a3%3A0x7a8f9e88f6f5b5d5!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1694700000000!5m2!1sen!2sus"
+              width="50%"
               height="325"
               style="border: 0"
               allowfullscreen=""
